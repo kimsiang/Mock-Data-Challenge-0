@@ -29,7 +29,7 @@ namespace gm2calo {
         vector<CaloIsland> CaloIslandCollection;
 
         // t0 of each island determined from the laser calibration
-        int[54] t0;
+        double t0[54];
 
         // Calorimeter id number
         unsigned int id;
