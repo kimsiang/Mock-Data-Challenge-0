@@ -6,33 +6,59 @@
 namespace gm2calo {
 
     /* structure for a single island (the length is variable) */
-    struct Island {
+    struct IslandArtRecord {
+
+        // Island number in a single fill
+        int island_num;
+
+        // Crystal number
+        int xtal_num;
 
         // time stamp of the 1st sample in the island
-        int t_sample0;
+        int t_first;
+
+        // length of the island
+        int length;
 
         // vector of traces in the island
-        vector<int> trace;
+        vector<UShort_t> trace;
     };
 
     /* structure for 54 islands in a calorimeter */
-    struct CaloIsland{
+    struct Calo_IslandArtRecord{
 
-        Island[54];
+        // Calo Island number in a single fill. Should be the same as the island_num
+        int calo_island_num;
+
+        // Calorimeter number
+        int calo_num;
+
+        // time stamp of the 1st sample in the island
+        int t_first;
+
+        // length of the island
+        int length;
+
+        // a collection of 54 islands in a calorimeter 
+        IslandArtRecord[54] calo_trace;
 
     };
 
     /* structure for a collection of CaloIslands in a fill (700 us) */
-    struct CaloIslandCollection{
+    struct Fill_IslandCollection{
 
-        // vector of CaloIslands in a fill
-        vector<CaloIsland> CaloIslandCollection;
+        // Calorimeter number
+        int calo_num;
+
+        // Fill number
+        int fill_num;
 
         // t0 of each island determined from the laser calibration
-        double t0[54];
+        double t_start[54];
 
-        // Calorimeter id number
-        unsigned int id;
+        // vector of CaloIslands in a fill
+        std::vector<Calo_IslandArtRecord> fill_trace;;
+
     };
 
 }
