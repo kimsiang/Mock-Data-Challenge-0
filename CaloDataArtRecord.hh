@@ -21,7 +21,7 @@ namespace gm2calo {
         int length;
 
         // vector of traces in the island
-        vector<UShort_t> trace;
+        std::vector<UShort_t> trace;
     };
 
     /* structure for 54 islands in a calorimeter */
