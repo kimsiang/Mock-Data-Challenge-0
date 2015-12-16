@@ -25,7 +25,7 @@ namespace gm2calo {
     };
 
     /* structure for 54 islands in a calorimeter */
-    struct Calo_IslandArtRecord{
+    struct CaloIslandArtRecord{
 
         // Calo Island number in a single fill. Should be the same as the island_num
         int calo_island_num;
@@ -45,7 +45,7 @@ namespace gm2calo {
     };
 
     /* structure for a collection of CaloIslands in a fill (700 us) */
-    struct Fill_IslandCollection{
+    struct FillIslandCollection{
 
         // Calorimeter number
         int calo_num;
@@ -57,7 +57,7 @@ namespace gm2calo {
         double t_start[54];
 
         // vector of CaloIslands in a fill
-        std::vector<Calo_IslandArtRecord> fill_trace;
+        std::vector<CaloIslandArtRecord> fill_trace;
 
     };
 
