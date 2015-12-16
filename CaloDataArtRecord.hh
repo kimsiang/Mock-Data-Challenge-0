@@ -57,7 +57,7 @@ namespace gm2calo {
         double t_start[54];
 
         // vector of CaloIslands in a fill
-        std::vector<Calo_IslandArtRecord> fill_trace;;
+        std::vector<Calo_IslandArtRecord> fill_trace;
 
     };
 
